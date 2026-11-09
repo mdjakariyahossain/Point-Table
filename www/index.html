@@ -1,11 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="bn">
 <head>
-  <title>My First App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#10172a">
+<title>My App</title>
+<style>
+:root{--bg:#0b1020;--panel:#151e33;--muted:#9aa8c7;--text:#f5f7ff;--a:#6d7cff;--b:#22d3a6}
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;background:radial-gradient(circle at 85% 5%,#26366d 0,transparent 34%),linear-gradient(160deg,#0b1020,#10182c 60%,#0b1020);color:var(--text);min-height:100vh}
+.wrap{max-width:480px;margin:auto;padding:22px 17px 35px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}.brand{display:flex;gap:11px;align-items:center}.logo{width:43px;height:43px;border-radius:15px;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;font-size:22px;box-shadow:0 8px 25px #5264ff55}.brand strong{display:block;font-size:17px}.brand small{color:var(--muted);font-size:11px}.avatar{border:1px solid #ffffff20;background:#ffffff0d;border-radius:14px;padding:10px 12px;color:#dce4ff}
+.hero{padding:25px 22px;border-radius:25px;background:linear-gradient(130deg,#5368ef,#7354ce 58%,#23b99b);position:relative;overflow:hidden;box-shadow:0 16px 40px #0005}.hero:after{content:"";position:absolute;width:190px;height:190px;border:1px solid #ffffff35;border-radius:50%;right:-70px;top:-65px;box-shadow:0 0 0 22px #ffffff0c,0 0 0 48px #ffffff09}.eyebrow{font-size:12px;letter-spacing:1.5px;color:#e7eaff;font-weight:700}.hero h1{font-size:27px;line-height:1.35;margin:12px 0 8px;max-width:280px}.hero p{font-size:13px;line-height:1.7;color:#eef0ff;margin:0 0 18px;max-width:285px}.cta{border:0;border-radius:12px;padding:11px 17px;background:#fff;color:#3547b6;font-weight:750;font-size:13px;cursor:pointer}
+.section{display:flex;justify-content:space-between;align-items:center;margin:27px 2px 13px}.section h2{font-size:17px;margin:0}.section span{font-size:12px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tile{background:linear-gradient(145deg,#19243c,#121b2e);border:1px solid #ffffff10;border-radius:19px;padding:17px 15px;min-height:126px}.tile .ico{width:39px;height:39px;border-radius:13px;background:#6578ff22;display:grid;place-items:center;font-size:20px;margin-bottom:13px}.tile strong{font-size:14px;display:block}.tile small{color:var(--muted);font-size:11px;display:block;margin-top:5px;line-height:1.5}
+.notice{margin-top:15px;padding:16px;border:1px solid #ffffff12;border-radius:18px;background:#ffffff08;display:flex;gap:12px;align-items:flex-start}.notice .bulb{font-size:21px}.notice strong{font-size:13px}.notice p{font-size:12px;color:var(--muted);line-height:1.6;margin:5px 0 0}
+.bottom{display:flex;justify-content:space-around;margin-top:25px;padding:14px 8px;border-radius:18px;background:#121b2e;border:1px solid #ffffff10}.bottom a{font-size:11px;color:#aab6d2;text-decoration:none;text-align:center}.bottom a b{display:block;font-size:18px;margin-bottom:4px}.bottom a.active{color:#8ea0ff}
+footer{text-align:center;color:#71809f;font-size:10px;margin-top:19px}
+@media(min-width:500px){.wrap{padding-top:32px}.hero h1{font-size:30px}}
+</style>
 </head>
-<body style="background:#10172a;color:white;text-align:center;padding:50px">
-  <h1>Welcome!</h1>
-  <h2>My First Android App</h2>
-  <p>My app is working successfully!</p>
+<body>
+<main class="wrap">
+  <header class="top">
+    <div class="brand"><div class="logo">✦</div><div><strong>আমার অ্যাপ</strong><small>আপনার প্রতিদিনের ডিজিটাল সঙ্গী</small></div></div>
+    <div class="avatar">☰</div>
+  </header>
+
+  <section class="hero">
+    <div class="eyebrow">WELCOME • স্বাগতম</div>
+    <h1>আপনার নতুন অভিজ্ঞতা শুরু হোক এখান থেকেই</h1>
+    <p>একটি সুন্দর, সহজ ও দ্রুত অ্যাপ অভিজ্ঞতা—সবকিছু এক জায়গায়।</p>
+    <button class="cta" onclick="showMessage()">শুরু করুন&nbsp; →</button>
+  </section>
+
+  <div class="section"><h2>এক্সপ্লোর করুন</h2><span>আপনার জন্য</span></div>
+  <section class="grid">
+    <article class="tile"><div class="ico">🚀</div><strong>দ্রুত অ্যাক্সেস</strong><small>প্রয়োজনীয় কাজ সহজে শুরু করুন।</small></article>
+    <article class="tile"><div class="ico">🛡️</div><strong>নিরাপদ অভিজ্ঞতা</strong><small>সহজ ও পরিচ্ছন্ন ব্যবহার ব্যবস্থা।</small></article>
+    <article class="tile"><div class="ico">🎨</div><strong>স্মার্ট ডিজাইন</strong><small>মোবাইলের জন্য আধুনিক লেআউট।</small></article>
+    <article class="tile"><div class="ico">⚡</div><strong>দ্রুত ও হালকা</strong><small>ইন্টারনেট ছাড়াও এই পেজটি খুলবে।</small></article>
+  </section>
+
+  <section class="notice">
+    <div class="bulb">💡</div><div><strong>আপনার অ্যাপ, আপনার মতো</strong><p>এটি একটি প্রস্তুত হোমপেজ টেমপ্লেট। আপনার প্রয়োজন অনুযায়ী নাম, লেখা, রং ও ফিচার পরিবর্তন করতে পারবেন।</p></div>
+  </section>
+
+  <nav class="bottom">
+    <a class="active" href="#" onclick="navMsg('হোম');return false"><b>⌂</b>হোম</a>
+    <a href="#" onclick="navMsg('সার্ভিস');return false"><b>▦</b>সার্ভিস</a>
+    <a href="#" onclick="navMsg('প্রোফাইল');return false"><b>♙</b>প্রোফাইল</a>
+  </nav>
+  <footer>© 2026 আমার অ্যাপ • Made with care</footer>
+</main>
+<script>
+function showMessage(){alert('স্বাগতম! আপনার অ্যাপটি প্রস্তুত।');}
+function navMsg(name){alert(name+' পেজটি পরে আপনার প্রয়োজন অনুযায়ী যুক্ত করা যাবে।');}
+</script>
 </body>
 </html>
