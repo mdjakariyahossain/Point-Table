@@ -1,0 +1,6 @@
+{
+  "appId": "com.ajhost.myfirstapp",
+  "appName": "My First App",
+  "webDir": "www",
+  "bundledWebRuntime": false
+}
