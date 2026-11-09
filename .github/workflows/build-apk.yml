@@ -43,6 +43,13 @@ jobs:
         working-directory: android
         run: chmod +x gradlew && ./gradlew assembleDebug
 
+      - name: Validate APK
+        run: |
+          APK="android/app/build/outputs/apk/debug/app-debug.apk"
+          ls -lh "$APK"
+          test -s "$APK"
+          unzip -t "$APK"
+          
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
