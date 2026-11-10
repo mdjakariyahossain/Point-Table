@@ -1,59 +1,178 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-<meta name="theme-color" content="#10172a">
-<title>My App</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090d16">
+<title>DEX E-SPORTS | Free Fire Point Table</title>
 <style>
-:root{--bg:#0b1020;--panel:#151e33;--muted:#9aa8c7;--text:#f5f7ff;--a:#6d7cff;--b:#22d3a6}
-*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Noto Sans Bengali",sans-serif;background:radial-gradient(circle at 85% 5%,#26366d 0,transparent 34%),linear-gradient(160deg,#0b1020,#10182c 60%,#0b1020);color:var(--text);min-height:100vh}
-.wrap{max-width:480px;margin:auto;padding:22px 17px 35px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:25px}.brand{display:flex;gap:11px;align-items:center}.logo{width:43px;height:43px;border-radius:15px;background:linear-gradient(135deg,var(--a),var(--b));display:grid;place-items:center;font-size:22px;box-shadow:0 8px 25px #5264ff55}.brand strong{display:block;font-size:17px}.brand small{color:var(--muted);font-size:11px}.avatar{border:1px solid #ffffff20;background:#ffffff0d;border-radius:14px;padding:10px 12px;color:#dce4ff}
-.hero{padding:25px 22px;border-radius:25px;background:linear-gradient(130deg,#5368ef,#7354ce 58%,#23b99b);position:relative;overflow:hidden;box-shadow:0 16px 40px #0005}.hero:after{content:"";position:absolute;width:190px;height:190px;border:1px solid #ffffff35;border-radius:50%;right:-70px;top:-65px;box-shadow:0 0 0 22px #ffffff0c,0 0 0 48px #ffffff09}.eyebrow{font-size:12px;letter-spacing:1.5px;color:#e7eaff;font-weight:700}.hero h1{font-size:27px;line-height:1.35;margin:12px 0 8px;max-width:280px}.hero p{font-size:13px;line-height:1.7;color:#eef0ff;margin:0 0 18px;max-width:285px}.cta{border:0;border-radius:12px;padding:11px 17px;background:#fff;color:#3547b6;font-weight:750;font-size:13px;cursor:pointer}
-.section{display:flex;justify-content:space-between;align-items:center;margin:27px 2px 13px}.section h2{font-size:17px;margin:0}.section span{font-size:12px;color:var(--muted)}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.tile{background:linear-gradient(145deg,#19243c,#121b2e);border:1px solid #ffffff10;border-radius:19px;padding:17px 15px;min-height:126px}.tile .ico{width:39px;height:39px;border-radius:13px;background:#6578ff22;display:grid;place-items:center;font-size:20px;margin-bottom:13px}.tile strong{font-size:14px;display:block}.tile small{color:var(--muted);font-size:11px;display:block;margin-top:5px;line-height:1.5}
-.notice{margin-top:15px;padding:16px;border:1px solid #ffffff12;border-radius:18px;background:#ffffff08;display:flex;gap:12px;align-items:flex-start}.notice .bulb{font-size:21px}.notice strong{font-size:13px}.notice p{font-size:12px;color:var(--muted);line-height:1.6;margin:5px 0 0}
-.bottom{display:flex;justify-content:space-around;margin-top:25px;padding:14px 8px;border-radius:18px;background:#121b2e;border:1px solid #ffffff10}.bottom a{font-size:11px;color:#aab6d2;text-decoration:none;text-align:center}.bottom a b{display:block;font-size:18px;margin-bottom:4px}.bottom a.active{color:#8ea0ff}
-footer{text-align:center;color:#71809f;font-size:10px;margin-top:19px}
-@media(min-width:500px){.wrap{padding-top:32px}.hero h1{font-size:30px}}
+:root{--bg:#080c14;--panel:#111927;--panel2:#172235;--line:#28364b;--gold:#f5b900;--gold2:#ffda55;--text:#f4f6fa;--muted:#9aa8ba;--green:#36d399;--red:#ff647c}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 50% -15%,#25334c 0,#0a101b 42%,#070a11 100%);color:var(--text);font-family:Arial,Helvetica,sans-serif;min-height:100vh}
+header{padding:22px 16px 16px;text-align:center;border-bottom:1px solid #263247;background:#080c14cc;position:sticky;top:0;z-index:5;backdrop-filter:blur(12px)}
+.brand{font-weight:1000;letter-spacing:2px;font-size:clamp(20px,4vw,30px);font-style:italic}.brand span{color:var(--gold)}.sub{color:var(--muted);font-size:11px;letter-spacing:3px;margin-top:5px}
+nav{display:flex;gap:8px;max-width:1100px;margin:15px auto 0;overflow-x:auto;padding-bottom:2px}
+nav button{white-space:nowrap;background:#131d2c;color:#b8c4d4;border:1px solid var(--line);padding:10px 15px;border-radius:9px;font-weight:800;cursor:pointer}
+nav button.active{background:var(--gold);color:#111;border-color:var(--gold)}
+main{max-width:1100px;margin:22px auto;padding:0 14px 40px}.page{display:none}.page.active{display:block}
+.section-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:5px 0 16px}.section-head h2{margin:0;font-size:20px}.section-head p{color:var(--muted);font-size:12px;margin:5px 0 0}
+.card{background:linear-gradient(145deg,#151f30,#101725);border:1px solid var(--line);border-radius:14px;padding:16px;margin-bottom:14px;box-shadow:0 8px 24px #0003}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.field{display:flex;flex-direction:column;gap:6px}.field label{font-size:11px;color:var(--muted);font-weight:800;letter-spacing:.7px}
+input,select,textarea{width:100%;background:#090f19;border:1px solid #34445c;color:var(--text);padding:11px 10px;border-radius:8px;outline:none;min-width:0}
+input:focus,select:focus,textarea:focus{border-color:var(--gold)}input::placeholder,textarea::placeholder{color:#66758a}textarea{background:#090f19;border:1px solid #34445c;color:var(--text);padding:11px 10px;border-radius:8px;outline:none;resize:vertical;font:inherit;line-height:1.5}
+button{font-family:inherit}.btn{border:0;border-radius:9px;padding:11px 15px;font-weight:900;cursor:pointer;background:var(--gold);color:#151515}.btn:hover{filter:brightness(1.08)}.btn.secondary{background:#26364c;color:#eaf0f8;border:1px solid #3a4b64}.btn.danger{background:#482331;color:#ffd9df;border:1px solid #793749}.btn.small{padding:7px 10px;font-size:11px}
+.team-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.team-card{background:#101927;border:1px solid #2a394e;border-radius:12px;padding:13px}.team-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:11px}.team-no{font-size:12px;font-weight:1000;color:var(--gold);letter-spacing:1px}.team-card .field{margin-bottom:9px}
+.table-wrap{overflow:auto;border:1px solid var(--line);border-radius:11px}table{border-collapse:collapse;width:100%;min-width:650px;background:#0d1420}th{background:#202d40;color:var(--gold2);font-size:11px;letter-spacing:.7px;text-align:left;padding:12px 10px;white-space:nowrap}td{padding:11px 10px;border-top:1px solid #253247;font-size:13px}\n#standingTable th,#standingTable td{text-align:center}tr:nth-child(even) td{background:#121c2b}.rank{font-weight:1000;color:var(--gold);font-size:16px}.champion td{background:#3a3018!important}.muted{color:var(--muted)}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:14px}.stat{background:#111c2b;border:1px solid var(--line);padding:14px;border-radius:11px}.stat strong{font-size:23px;color:var(--gold);display:block}.stat span{font-size:10px;color:var(--muted);letter-spacing:1px}
+.match-row{display:grid;grid-template-columns:70px minmax(130px,1.4fr) 1fr 1fr;gap:9px;align-items:end;padding:12px 0;border-bottom:1px solid #263348}.match-row:last-child{border-bottom:0}.match-row .field label{font-size:9px}.match-title{font-size:12px;color:var(--gold);font-weight:900;margin-bottom:5px}
+.notice{color:var(--muted);font-size:12px;line-height:1.6}.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.empty{text-align:center;color:var(--muted);padding:28px 10px}
+.points-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.points-grid .field{background:#0c1420;border:1px solid #29374b;border-radius:9px;padding:9px}
+footer{text-align:center;color:#64738a;font-size:10px;letter-spacing:1px;padding:18px}
+@media(max-width:650px){.team-grid{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.match-row{grid-template-columns:58px 1fr 1fr}.match-row .team-select{grid-column:2/4}.stats{grid-template-columns:repeat(3,1fr)}.stat{padding:10px}.stat strong{font-size:18px}main{padding-left:10px;padding-right:10px}.card{padding:12px}}
 </style>
 </head>
 <body>
-<main class="wrap">
-  <header class="top">
-    <div class="brand"><div class="logo">✦</div><div><strong>আমার অ্যাপ</strong><small>আপনার প্রতিদিনের ডিজিটাল সঙ্গী</small></div></div>
-    <div class="avatar">☰</div>
-  </header>
-
-  <section class="hero">
-    <div class="eyebrow">WELCOME • স্বাগতম</div>
-    <h1>আপনার নতুন অভিজ্ঞতা শুরু হোক এখান থেকেই</h1>
-    <p>একটি সুন্দর, সহজ ও দ্রুত অ্যাপ অভিজ্ঞতা—সবকিছু এক জায়গায়।</p>
-    <button class="cta" onclick="showMessage()">শুরু করুন&nbsp; →</button>
-  </section>
-
-  <div class="section"><h2>এক্সপ্লোর করুন</h2><span>আপনার জন্য</span></div>
-  <section class="grid">
-    <article class="tile"><div class="ico">🚀</div><strong>দ্রুত অ্যাক্সেস</strong><small>প্রয়োজনীয় কাজ সহজে শুরু করুন।</small></article>
-    <article class="tile"><div class="ico">🛡️</div><strong>নিরাপদ অভিজ্ঞতা</strong><small>সহজ ও পরিচ্ছন্ন ব্যবহার ব্যবস্থা।</small></article>
-    <article class="tile"><div class="ico">🎨</div><strong>স্মার্ট ডিজাইন</strong><small>মোবাইলের জন্য আধুনিক লেআউট।</small></article>
-    <article class="tile"><div class="ico">⚡</div><strong>দ্রুত ও হালকা</strong><small>ইন্টারনেট ছাড়াও এই পেজটি খুলবে।</small></article>
-  </section>
-
-  <section class="notice">
-    <div class="bulb">💡</div><div><strong>আপনার অ্যাপ, আপনার মতো</strong><p>এটি একটি প্রস্তুত হোমপেজ টেমপ্লেট। আপনার প্রয়োজন অনুযায়ী নাম, লেখা, রং ও ফিচার পরিবর্তন করতে পারবেন।</p></div>
-  </section>
-
-  <nav class="bottom">
-    <a class="active" href="#" onclick="navMsg('হোম');return false"><b>⌂</b>হোম</a>
-    <a href="#" onclick="navMsg('সার্ভিস');return false"><b>▦</b>সার্ভিস</a>
-    <a href="#" onclick="navMsg('প্রোফাইল');return false"><b>♙</b>প্রোফাইল</a>
+<header>
+  <div class="brand">FREE <span>FIRE</span> POINT TABLE</div>
+  <div class="sub">DEX E-SPORTS ORGANIZATION</div>
+  <nav>
+    <button class="active" data-page="teams">TEAM SETUP</button>
+    <button data-page="match">MATCH ENTRY</button>
+    <button data-page="standing">OVERALL STANDING</button>
+    <button data-page="settings">POINT SYSTEM</button>
   </nav>
-  <footer>© 2026 আমার অ্যাপ • Made with care</footer>
+</header>
+<main>
+<section id="teams" class="page active">
+ <div class="section-head"><div><h2>01 / TEAM REGISTRATION</h2><p>Register up to 12 teams with two players each.</p></div><span class="muted" id="teamCount">0 / 12 TEAMS</span></div>
+ <div class="card">
+  <div class="field"><label>PASTE TEAM SETUP TEXT</label><textarea id="teamPaste" rows="9" placeholder="01 TEAM NAME : Team Name&#10;LDR IGN : Leader IGN&#10;2ND IGN : Second Player IGN&#10;&#10;02 TEAM NAME : ..."></textarea></div>
+  <div class="actions"><button class="btn" onclick="importPastedTeams()">AUTO FILL TEAM SETUP</button><button class="btn secondary" onclick="$('teamPaste').value=''">CLEAR PASTE BOX</button></div>
+  <p class="notice">Copy your numbered team list and paste it here. Team Name, LDR IGN and 2ND IGN will be filled into the matching slots automatically.</p>
+ </div>
+ <div class="team-grid" id="teamGrid"></div>
+ <div class="actions"><button class="btn" onclick="saveTeams()">SAVE TEAM DETAILS</button><button class="btn secondary" onclick="loadDemo()">LOAD SAMPLE DATA</button></div>
+ <p class="notice">Team names and player IGNs will appear automatically in Match Entry and Overall Standing. Your data is saved on this device.</p>
+</section>
+
+<section id="match" class="page">
+ <div class="section-head"><div><h2>02 / MATCH RESULT ENTRY</h2><p>Enter each team's placement and combined eliminations.</p></div></div>
+ <div class="card">
+  <div class="grid">
+   <div class="field"><label>MATCH NAME / NUMBER</label><input id="matchName" placeholder="e.g. Match 01"></div>
+   <div class="field"><label>MAP NAME</label><select id="mapName"><option>Bermuda</option><option>Purgatory</option><option>Kalahari</option><option>Alpine</option><option>Nexterra</option><option>Solara</option></select></div>
+  </div>
+  <p class="notice">For every team, choose its final position and enter the team's Total Elims (all four players combined). Set position to — if the team did not participate.</p>
+ </div>
+ <div class="card"><div class="section-head"><h2>TEAM RESULTS</h2><span class="muted">12 TEAM SLOTS</span></div>
+  <div class="field" style="margin-bottom:12px"><label>SEARCH TEAM / PLAYER</label><input id="matchSearch" type="search" placeholder="Type team name or any player's IGN..." oninput="filterMatchRows()"></div>
+  <div id="matchRows"></div>
+ <div class="actions"><button class="btn" onclick="saveMatch()">SAVE MATCH RESULT</button><button class="btn secondary" onclick="resetMatchForm()">CLEAR FORM</button></div></div>
+ <div class="card"><h3 style="margin-top:0">SAVED MATCHES</h3><div id="matchHistory"></div></div>
+</section>
+
+<section id="standing" class="page">
+ <div class="section-head"><div><h2>03 / OVERALL STANDING</h2><p>Live leaderboard calculated from all saved matches.</p></div><button class="btn" onclick="downloadTable()">DOWNLOAD TABLE PNG</button></div>
+  <div class="card" style="margin-bottom:14px">
+   <div class="grid">
+    <div class="field"><label>DOWNLOAD HEADER TITLE</label><input id="exportTitle" value="FREE FIRE OVERALL STANDING" placeholder="Table title"></div>
+    <div class="field"><label>DOWNLOAD HEADER SUBTITLE</label><input id="exportSubtitle" value="DEX E-SPORTS ORGANIZATION" placeholder="Organizer / subtitle"></div>
+   </div>
+   <div class="field" style="margin-top:10px"><label>DOWNLOAD FOOTER TEXT (BOTTOM RIGHT)</label><input id="exportFooter" value="" placeholder="e.g. Powered by DEX E-SPORTS"></div>
+   <div class="grid" style="margin-top:12px">
+    <div class="field"><label>BACKGROUND GRADIENT COLOR 1</label><input id="exportBg1" type="color" value="#090e18"></div>
+    <div class="field"><label>BACKGROUND GRADIENT COLOR 2</label><input id="exportBg2" type="color" value="#172235"></div>
+   </div>
+   <div class="field" style="margin-top:10px"><label>GRADIENT ANGLE</label><select id="exportGradientAngle"><option value="0">Top → Bottom</option><option value="90">Left → Right</option><option value="45">Diagonal ↘</option><option value="135">Diagonal ↙</option><option value="180">Bottom → Top</option></select></div>
+   <p class="notice">These settings affect only the downloaded PNG. Footer text will appear below the table, outside its rows.</p>
+  </div>
+ <div class="stats"><div class="stat"><strong id="statTeams">0</strong><span>REGISTERED TEAMS</span></div><div class="stat"><strong id="statMatches">0</strong><span>MATCHES PLAYED</span></div><div class="stat"><strong id="statKills">0</strong><span>TOTAL ELIMINATIONS</span></div></div>
+ <div class="card"><div class="table-wrap"><table id="standingTable"><thead><tr><th>RANK</th><th>TEAM NAME</th><th>BOOYAH</th><th>ELIMINATIONS</th><th>RANK POINT</th><th>TOTAL POINT</th></tr></thead><tbody></tbody></table></div>
+ <div class="actions"><button class="btn secondary" onclick="window.print()">PRINT / SAVE PDF</button><button class="btn danger" onclick="clearMatches()">DELETE ALL MATCH RESULTS</button></div></div>
+</section>
+
+<section id="settings" class="page">
+ <div class="section-head"><div><h2>04 / POINT SYSTEM</h2><p>Change scoring values to match your tournament rules.</p></div></div>
+ <div class="card"><h3>PLACEMENT POINTS</h3><p class="notice">Default values are editable. Positions 11 and 12 receive zero points by default.</p><div class="points-grid" id="placementGrid"></div>
+ <div class="grid" style="margin-top:14px"><div class="field"><label>POINT PER ELIMINATION</label><input id="killPoint" type="number" min="0" value="1"></div><div class="field"><label>BOOYAH BONUS</label><input id="booyahBonus" type="number" min="0" value="0"></div></div>
+ <div class="actions"><button class="btn" onclick="saveSettings()">SAVE POINT SYSTEM</button><button class="btn secondary" onclick="defaultSettings()">RESTORE DEFAULT</button></div></div>
+ <div class="card"><h3>BACKUP & RESTORE</h3><p class="notice">Export your teams, match history and scoring settings to a backup file. Import it later on this device or another device.</p><div class="actions"><button class="btn secondary" onclick="exportBackup()">EXPORT BACKUP</button><label class="btn secondary" style="display:inline-flex;align-items:center">IMPORT BACKUP<input type="file" accept="application/json" id="importFile" style="display:none" onchange="importBackup(event)"></label></div></div>
+</section>
 </main>
+<footer>DEX E-SPORTS ORGANIZATION PRESENTS<br>FREE FIRE TOURNAMENT MANAGER</footer>
 <script>
-function showMessage(){alert('স্বাগতম! আপনার অ্যাপটি প্রস্তুত।');}
-function navMsg(name){alert(name+' পেজটি পরে আপনার প্রয়োজন অনুযায়ী যুক্ত করা যাবে।');}
-</script>
-</body>
-</html>
+const $=id=>document.getElementById(id);
+const defaultPlacement=[12,9,8,7,6,5,4,3,2,1,0,0];
+let state={teams:Array.from({length:12},(_,i)=>({name:"",p1:"",p2:""})),matches:[],placement:defaultPlacement.slice(),killPoint:1,booyahBonus:0};
+function persist(){localStorage.setItem("dex_ff_point_table_v1",JSON.stringify(state))}
+function restore(){try{let x=JSON.parse(localStorage.getItem("dex_ff_point_table_v1"));if(x&&x.teams&&x.matches)state={...state,...x}}catch(e){}}
+function esc(s){return String(s??"").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+function renderTeams(){ $("teamGrid").innerHTML=state.teams.map((t,i)=>`<div class="team-card"><div class="team-top"><span class="team-no">${String(i+1).padStart(2,"0")} TEAM</span><span class="muted">SLOT ${i+1}</span></div><div class="field"><label>TEAM NAME</label><input data-team="${i}" data-key="name" value="${esc(t.name)}" placeholder="Enter team name"></div><div class="field"><label>LDR IGN</label><input data-team="${i}" data-key="p1" value="${esc(t.p1)}" placeholder="Leader in-game name"></div><div class="field"><label>2ND IGN</label><input data-team="${i}" data-key="p2" value="${esc(t.p2)}" placeholder="Second player in-game name"></div></div>`).join("");$("teamCount").textContent=state.teams.filter(t=>t.name.trim()).length+" / 12 TEAMS"}
+function readTeams(){document.querySelectorAll("[data-team]").forEach(el=>{state.teams[+el.dataset.team][el.dataset.key]=el.value})}
+function importPastedTeams(){
+ const raw=$("teamPaste").value.trim();
+ if(!raw){alert("Please paste your team setup text first.");return}
+ const lines=raw.split(/\r?\n/).map(x=>x.trim());
+ const blocks=[];let current=null;
+ for(let lineIndex=0;lineIndex<lines.length;lineIndex++){
+  const line=lines[lineIndex];
+  const start=line.match(/^0?(\d{1,2})\s*TEAM\s*NAME\s*:\s*(.*)$/i);
+  if(start){
+   if(current)blocks.push(current);
+   current={index:+start[1]-1,name:start[2]||"",p1:"",p2:""};
+   continue;
+  }
+  if(!current)continue;
+  const m=line.match(/^(TEAM\s*NAME|LDR\s*IGN|2ND\s*IGN)\s*:\s*(.*)$/i);
+  if(m){
+   const key=/^TEAM/i.test(m[1])?"name":/^LDR/i.test(m[1])?"p1":"p2";
+   current[key]=m[2]||"";
+   if(!current[key]){
+    let nextIndex=lineIndex+1;
+    while(nextIndex<lines.length && !lines[nextIndex])nextIndex++;
+    const next=lines[nextIndex]||"";
+    if(next && !/^(0?\d{1,2}\s*TEAM\s*NAME|TEAM\s*NAME|LDR\s*IGN|2ND\s*IGN)\s*:/i.test(next))current[key]=next;
+   }
+  }else if(line && !current.name)current.name=line;
+ }
+ if(current)blocks.push(current);
+ let count=0;
+ blocks.forEach(b=>{
+  if(b.index<0||b.index>=12)return;
+  const vals=["name","p1","p2"];
+  vals.forEach(k=>{if(b[k]!==undefined)state.teams[b.index][k]=b[k].trim()});
+  count++;
+ });
+ if(!count){alert("No valid team blocks found. Use labels like 01 TEAM NAME :, LDR IGN : and 2ND IGN :.");return}
+ persist();renderTeams();renderMatchRows();renderStanding();
+ alert(count+" team slot(s) filled successfully.");
+}
+function saveTeams(){readTeams();persist();renderTeams();renderMatchRows();renderStanding();alert("Team details saved successfully.")}
+function renderMatchRows(){ $("matchRows").innerHTML=state.teams.map((t,i)=>`<div class="match-row" data-match-index="${i}"><div><div class="match-title">${String(i+1).padStart(2,"0")}</div><span class="muted" style="font-size:10px">TEAM</span></div><div class="field team-select"><label>TEAM NAME</label><select id="rteam${i}"><option value="${i}">${esc(t.name||"Team "+(i+1))} — ${esc(t.p1||"Player 1")} / ${esc(t.p2||"Player 2")}</option></select></div><div class="field"><label>RANK / POSITION</label><select id="rank${i}"><option value="0">— Not played</option>${Array.from({length:12},(_,j)=>`<option value="${j+1}">${j+1}${j===0?"st":j===1?"nd":j===2?"rd":"th"}</option>`).join("")}</select></div><div class="field"><label>TOTAL ELIMS (4 PLAYERS)</label><input id="kTotal_${i}" type="number" min="0" value="0"></div></div>`).join("");filterMatchRows()}
+function filterMatchRows(){
+ const q=($("matchSearch")?.value||"").trim().toLocaleLowerCase();
+ let shown=0;
+ document.querySelectorAll("[data-match-index]").forEach(row=>{
+  const i=+row.dataset.matchIndex,t=state.teams[i]||{};
+  const hay=[t.name,t.p1,t.p2].join(" ").toLocaleLowerCase();
+  const match=!q||hay.includes(q);
+  row.style.display=match?"":"none";
+  if(match)shown++;
+ });
+ let empty=$("matchSearchEmpty");
+ if(!shown){
+  if(!empty){empty=document.createElement("div");empty.id="matchSearchEmpty";empty.className="empty";$("matchRows").appendChild(empty)}
+  empty.textContent="No matching team or player found.";
+ }else if(empty)empty.remove();
+}
+function resetMatchForm(){delete $("match").dataset.editingMatch;$("matchName").value="";state.teams.forEach((_,i)=>{$("rank"+i).value="0";$("kTotal_"+i).value=0})}
+function saveMatch(){readTeams();let name=$("matchName").value.trim()||("Match "+(state.matches.length+1));let results=state.teams.map((t,i)=>({teamIndex:i,rank:+$("rank"+i).value,totalElims:Math.max(0,+$("kTotal_"+i).value||0)}));if(!results.some(r=>r.rank||r.totalElims)){alert("Please enter at least one team's result.");return}if(results.some(r=>r.rank>0&&!state.teams[r.teamIndex].name.trim())){alert("Please add a team name before entering its match result.");return}
+let editingId=$("match").dataset.editingMatch; if(editingId){let target=state.matches.find(m=>String(m.id)===editingId);if(target){target.name=name;target.map=$("mapName").value;target.results=results}else state.matches.push({id:Date.now(),name,map:$("mapName").value,results});delete $("match").dataset.editingMatch}else state.matches.push({id:Date.now(),name,map:$("mapName").value,results});persist();renderHistory();renderStanding();resetMatchForm();alert(editingId?"Match updated successfully. Overall standing updated.":"Match result saved. Overall standing updated.")}
+function calc(){let a=state.teams.map((t,i)=>({i,name:t.name||"Team "+(i+1),booyah:0,kills:0,rankPts:0,killPts:0,total:0}));state.matches.forEach(m=>m.results.forEach(r=>{let x=a[r.teamIndex];if(!x)return;x.kills+=(r.totalElims??((r.k1||0)+(r.k2||0)));if(r.rank>0){x.rankPts+=state.placement[r.rank-1]||0;if(r.rank===1)x.booyah++;}x.killPts+=(r.totalElims??((r.k1||0)+(r.k2||0)))*state.killPoint;if(r.rank===1)x.total+=state.booyahBonus}));a.forEach(x=>x.total+=x.rankPts+x.killPts);return a.sort((x,y)=>y.total-x.total||y.kills-x.kills||x.i-y.i)}
+function renderStanding(){let rows=calc();$("standingTable").querySelector("tbody").innerHTML=rows.map((x,i)=>`<tr class="${i===0&&x.total>0?"champion":""}"><td class="rank">${i+1}</td><td><b>${esc(x.name)}</b><div class="muted" style="font-size:10px">${esc(state.teams[x.i].p1)} / ${esc(state.teams[x.i].p2)}</div></td><td>${x.booyah}</td><td>${x.kills}</td><td>${x.rankPts}</td><td><b>${x.total}</b></td></tr>`).join("");$("statTeams").textContent=state.teams.filter(t=>t.name.trim()).length;$("statMatches").textContent=state.matches.length;$("statKills").textContent=rows.reduce((s,x)=>s+x.kills,0)}
+function renderHistory(){$("matchHistory").innerHTML=state.matches.length?state.matches.map((m,i)=>`<div style="display:flex;justify-content:space-between;gap:10px;align-items:center;border-bottom:1px solid #29374b;padding:10px 0"><div><b>${esc(m.name)}</b><div class="muted" style="font-size:11px">${esc(m.map)} · ${m.results.filter(r=>r.rank||r.totalElims||(r.k1||0)+(r.k2||0)).length} team entries</div></div><button class="btn secondary small" onclick="editMatch(${m.id})">EDIT</button><button class="btn danger small" onclick="deleteMatch(${m.id})">DELETE</button></div>`).join(""):'<div class="empty">No match results saved yet.</div>'}
+function editMatch(id){
+ let m=state.matches.find(x=>x.id===id);if(!m)return;
+ $("matchName").value=m.name||"";$("mapName").value=m.map||"Bermuda";
+ state.teams.forEach((_,i)=>{let r=m.results.find(x=>x.teamIndex===i);$("rank"+i).value=r?String(r.rank||0):"0";$("kTotal_"+i).value=r?(r.totalElims??((r.k1||0)+(r.k2||0))):0});
+ // Mark the selected match so SAVE MATCH RESULT updates it instead of adding a duplicate.
+ $("match").dataset.editingMatch=String(id);
+ 
